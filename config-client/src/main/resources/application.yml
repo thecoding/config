@@ -1,0 +1,15 @@
+server:
+  port: 9000
+spring:
+  application:
+    name: config-client
+
+
+info:
+
+management:
+  endpoints:
+    web:
+      exposure:
+        # * 代表所有暴露所有端点，不然看不到 /actuator/refresh接口
+        include: "*"

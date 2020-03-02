@@ -1,0 +1,39 @@
+spring:
+  profiles:
+    active: dev
+
+---
+spring:
+  profiles: prod
+  application:
+    name: config-single-client
+  cloud:
+    config:
+      uri: http://localhost:8000
+      label: master
+      profile: prod
+
+---
+spring:
+  profiles: test
+  application:
+    name: config-single-client
+  cloud:
+    config:
+      uri: http://localhost:8000
+      label: master
+      profile: test
+
+
+---
+spring:
+  profiles: dev
+  application:
+    name: config-single-clientConfigServicePropertySourceLocator
+  cloud:
+    config:
+      uri: http://localhost:8000
+      label: master
+      profile: dev
+      name: config-client
+
