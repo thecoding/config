@@ -1,14 +1,14 @@
 package com.test.apollo.controller;
 
-import com.ctrip.framework.apollo.spring.annotation.EnableApolloConfig;
 import com.google.gson.Gson;
-import org.springframework.cloud.client.ServiceInstance;
-import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.client.ServiceInstance;
+import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.annotation.Resource;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -19,8 +19,6 @@ import java.util.Map;
  * @createTime 2020年02月21日 16:17:00
  */
 @RestController
-// 命名空间，默认是application
-//@EnableApolloConfig("yz")
 public class ApolloController {
 
     @Value("${server.port:7000}")
@@ -35,6 +33,9 @@ public class ApolloController {
     @Autowired
     DiscoveryClient  discoveryClient;
 
+    @Resource
+    DataBean dataBean;
+
 
 
 
@@ -44,6 +45,7 @@ public class ApolloController {
         map.put("serverPort", serverPort);
         map.put("apolloinfo", apolloinfo);
         map.put("grayRelease", grayRelease);
+        map.put("dataBean.name", dataBean.getName());
         return map;
     }
 

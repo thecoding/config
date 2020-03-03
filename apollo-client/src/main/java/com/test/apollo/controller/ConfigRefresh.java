@@ -23,11 +23,11 @@ public class ConfigRefresh {
     RefreshScope refreshScope;
 
 
-    @ApolloConfigChangeListener
+    @ApolloConfigChangeListener({"yz"})
     public void onChange(ConfigChangeEvent event) {
         boolean isChange = false;
         for (String key : event.changedKeys()) {
-            if (key.startsWith("dev")) {
+            if (key.startsWith("yz.databean")) {
                 isChange = true;
                 break;
             }

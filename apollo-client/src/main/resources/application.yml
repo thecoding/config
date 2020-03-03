@@ -1,9 +1,9 @@
 server:
   port: 7002
 app:
-  id: springboot-apollo
+  id: apollo-client-001
 apollo:
-  meta: http://192.168.1.111:8080
+  meta: http://localhost:8080
   bootstrap:
     enabled: true
     eagerLoad:
@@ -15,13 +15,13 @@ spring:
 
 apolloinfo: test
 
+
 eureka:
   client:
     service-url:
-      defaultZone: http://name:admin123@localhost:7000/eureka/
+      defaultZone: http://localhost:8080/eureka/
   instance:
     instance-id: ${spring.cloud.client.ip-address}:${server.port}
     metadata-map:
       version: 2.0
       is-test: true
-

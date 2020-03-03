@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
  * @createTime 2020年03月03日 01:54:00
  */
 @Component
-@ConfigurationProperties(prefix = "yz.client")
+@ConfigurationProperties(prefix = "yz.databean")
 @RefreshScope
 public class DataBean {
 
