@@ -1,11 +1,16 @@
-server:
-  port: 9000
-spring:
-  application:
-    name: config-client
+#spring:
+##  profiles: dev
+#  application:
+#    name: config-client
+#  cloud:
+#    config:
+#      uri: http://127.0.0.1:8000
+#      label: master
+#      profile: dev
+#      name: config-client
 
 
-info:
+info: default
 
 management:
   endpoints:

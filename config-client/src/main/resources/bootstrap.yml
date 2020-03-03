@@ -1,39 +1,59 @@
-spring:
-  profiles:
-    active: dev
 
----
+
+# config-client 先是加载bootstrap地址，默认的config-server请求是 xxx:8888端口，如果是在applicatioin.yml文件中配置
+# 系统会自动覆盖成 8888端口请求
 spring:
-  profiles: prod
+  #  profiles: dev
   application:
-    name: config-single-client
+    name: config-client
   cloud:
     config:
-      uri: http://localhost:8000
-      label: master
-      profile: prod
-
----
-spring:
-  profiles: test
-  application:
-    name: config-single-client
-  cloud:
-    config:
-      uri: http://localhost:8000
-      label: master
-      profile: test
-
-
----
-spring:
-  profiles: dev
-  application:
-    name: config-single-clientConfigServicePropertySourceLocator
-  cloud:
-    config:
-      uri: http://localhost:8000
+      uri: http://127.0.0.1:8000
       label: master
       profile: dev
       name: config-client
 
+
+#spring:
+#  profiles:
+#    active: dev
+#
+#
+#---
+#spring:
+#  profiles: dev
+#  application:
+#    name: config-client
+#  cloud:
+#    config:
+#      uri: http://localhost:8001
+#      label: master
+#      profile: dev
+#      name: config-client
+#
+#---
+#spring:
+#  profiles: test
+#  application:
+#    name: config-client
+#  cloud:
+#    config:
+#      uri: http://localhost:8001
+#      label: master
+#      profile: test
+#
+#---
+#spring:
+#  profiles: prod
+#  application:
+#    name: config-client
+#  cloud:
+#    config:
+#      uri: http://localhost:8001
+#      label: master
+#      profile: prod
+#
+#
+#
+#
+#
