@@ -13,6 +13,7 @@
         <module>config-client</module>
         <module>apollo-client</module>
         <module>config-eureka</module>
+        <module>nacos-client</module>
     </modules>
 
     <properties>
