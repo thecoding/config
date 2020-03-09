@@ -2,6 +2,7 @@
 #### config-server测试  
 
 1. 启动config-server
+   
    - 查看是否是正常启动 http://localhost:8000/application/dev/master  
 2. 查看server中请求过来的配置信息，根据client配置信息，请求 
 [config-server](http://localhost:8000/config-client/dev/master),
